@@ -1,0 +1,19 @@
+{
+  "name": "@nikandlv/fox",
+  "version": "1.0.0",
+  "description": "A Simple, Easy and fast state manager",
+  "license": "MIT",
+  "repository": "nikandlv/fox",
+  "main": "index.js",
+  "keywords": [
+    "state manager",
+    "state-manager",
+    "react",
+    "react state manager",
+    "fast state manager",
+    "fox"
+  ],
+  "dependencies": {
+    "undefsafe": "^2.0.2"
+  }
+}
