@@ -10,6 +10,10 @@ every item has a key that you can access directly from `fox` object or get it fr
 
 `manager` is the functions that we use to interact with `fox`
 
+#### Install
+
+`npm i @nikandlv/fox`
+
 #### Usage
 
 import it
