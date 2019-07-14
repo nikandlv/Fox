@@ -3,10 +3,19 @@ let onPublishListeners = [];
 let onUnpublishListeners = [];
 let onUpdateListeners = [];
 var fox = {};
-function log(str) {
+let log_level = 'ALL';
+let LOG_EVENT = 'EVENT';
+let LOG_ACTION = 'ACTION';
+function log(str,type) {
+	if(type !== log_level && log_level !== 'ALL') {
+		return;
+	}
     console.log("🦊 "+str)
 }
 var manager = {
+	setLogLevel: (level) => {
+		log_level = level;
+    },
     publish: (keys, fun, callback = ()=>{}) => {
         let dummy = fox;
         const keylist = keys.split(".");
@@ -20,14 +29,14 @@ var manager = {
         pointer[key] = fun;
         fox = dummy;
         if(!is_first) {
-            log("Updated:"+keys);
+            log("Updated:"+keys,LOG_ACTION);
             if (typeof onUpdateListeners[keys] !== "undefined") {
                 onUpdateListeners[keys].map((changeCallback) => {
                     return changeCallback(fun)
                 });
             }
         } else {
-            log("Published:"+keys);
+            log("Published:"+keys,LOG_ACTION);
             if (typeof onPublishListeners[keys] !== "undefined") {
                 onPublishListeners[keys].map((callback) => {
                     return callback(fun)
@@ -48,7 +57,7 @@ var manager = {
         }, dummy);
         delete pointer[key];
         fox = dummy;
-        log("Unpublished:"+keys);
+        log("Unpublished:"+keys,LOG_ACTION);
         if (typeof onUnpublishListeners[keys] !== "undefined") {
             onUnpublishListeners[keys].map((callback) => {
                 return callback(fun)
