@@ -1,6 +1,8 @@
-### Fox state manager
+## Fox state manager
 
-#### Logic
+> Fox is a simple key value observable state manager
+
+### Logic
 
 keep everything simple, share functions and data you want from a component either `set` or `get` and keep track of their update on other components!
 
@@ -10,11 +12,11 @@ every item has a key that you can access directly from `fox` object or get it fr
 
 `manager` is the functions that we use to interact with `fox`
 
-#### Install
+### Installation
 
 `npm i @nikandlv/fox`
 
-#### Usage
+### Usage
 
 import it
 
@@ -64,21 +66,21 @@ will be
 
 `fox.foo.bar`
 
-#### Events
+### Events
 
-Listener when key is published 
+#### Listener when key is published 
 
 `manager.onPublish(key,event_function)`
 
 runs once and asap when the key is available
 
-Listener when key is unpublished 
+#### Listener when key is unpublished 
 
 `manager.onUnpublish(key,event_function)`
 
 runs once and asap when the key is available
 
-Listener when key is updated 
+#### Listener when key is updated / observe
 
 `manager.onUpdate(key,event_function)`
 
