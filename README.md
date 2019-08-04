@@ -26,37 +26,45 @@ use it!
 
 you can publish what ever you want
 
-`manager.publish(key,value)`
+```
+manager.publish(key,value)
 
-`manager.publish("test",()=> { console.log("test") })`
+manager.publish("test",()=> { console.log("test") })
 
-`manager.publish("test1","im just a string")`
+manager.publish("test1","im just a string")
+```
 
 and you can unPublish them when you have to (when the component is not mounted anymore)
 
-`manager.unpublish(key)`
+```
+manager.unpublish(key)
 
-`manager.unpublish("test")`
+manager.unpublish("test")
 
-`manager.unpublish("test2")`
+manager.unpublish("test2")
+```
 
 then you can get them where you want like so
 
-`manager.get(key,default_value)`
+```
+manager.get(key,default_value)
 
-`manager.get("test",null)`
+manager.get("test",null)
 
-`manager.get("test2","test2 not found!")`
+manager.get("test2","test2 not found!")
+```
 
 the second parameter is the default value if the key does not exist
 
 or if you are sure you can access it directly at
 
-`fox.key`
+```
+fox.key
 
-`fox.test`
+fox.test
 
-`fox.test2`
+fox.test2
+```
 
 the key can also be as you want. for example
 
